@@ -8,7 +8,7 @@ This code has been tested after docking pose generation with [VOID](https://gith
 
 The code automates the generation of vibrational displacement modes for catalytic reactions, focusing on hydrocarbon reactions in acidic zeolites. The default output format is a `MODECAR` file for `VASP`, with atomic types in `POSCAR` and `POTCAR` files sorted alphabetically to ensure compatibility.
 
-It identifies oxygen atoms in gas-phase molecules docked into the crystal and distinguishes them from those in the catalyst framework (e.g., zeolites or oxides). Hydrogens at catalyst acid sites are also recognized and excluded from reactant mode calculations. For more details and examples, see the [examples folder](https://github.com/learningmatter-mit/DIMER/tree/dimer_code/examples) or the end of this document.
+It identifies oxygen atoms in gas-phase molecules docked into the crystal and distinguishes them from those in the catalyst framework (e.g., zeolites or oxides). Hydrogens at catalyst acid sites are also recognized and excluded from reactant mode calculations. For more details and examples, see the [examples folder](https://github.com/learningmatter-mit/PoTS/examples) or the end of this document.
 
 The code is tailored for reactions in zeolites, primarily hydrocarbon conversions and some involving light heteroatoms. To handle a broader range of atom types or catalyst compositions, modify the `CATALYST_FRAMEWORK_ELEMENTS` and `CATALYST_NON_FRAMEWORK_ELEMENTS` variables in ([scripts/chemistry_composition.py](https://github.com/learningmatter-mit/DIMER/blob/dimer_code/scripts/chemistry_composition.py)), where additional reaction examples are also available.
 
