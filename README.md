@@ -1,4 +1,4 @@
-# :link: DIMER: Transition State Mode Generation for Solid Catalysts
+# :link: PoTS: Transition State Mode Generation for Solid Catalysts
 
 This repository provides scripts to generate vibrational displacement modes for DIMER transition state (TS) searches in crystalline structures.
 
