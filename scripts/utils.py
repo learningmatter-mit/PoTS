@@ -92,7 +92,7 @@ class DimerUtils:
 
         return cartesian_coord
 
-    def get_molecular_oxygen_catalyst_hydrogens_indicies(sorted_structure, threshold_O=1.5, threshold_H=1.2):
+    def get_molecular_oxygen_catalyst_hydrogens_indicies(sorted_structure, threshold_O=4, threshold_H=1.2, bond_threshold_framework=1.7):
         """
         Check if any oxygen atom ("O") is close enough to an element different than "Si", "Al", or "O".
         Works with a pymatgen Structure object.
@@ -101,6 +101,7 @@ class DimerUtils:
             sorted_structure (Structure): A pymatgen Structure object.
             threshold_O (float): Distance threshold for oxygen atoms to check for proximity.
             threshold_H (float): Distance threshold for hydrogen atoms to check for proximity.
+            bond_threshold_framework (float): Distance cutoff to exclude O near framework atoms (e.g., Si, Al).
 
         Returns:
             list: Sorted list of oxygen indices.
@@ -118,20 +119,34 @@ class DimerUtils:
                 distance = sorted_structure.get_distance(i, j)  # Get the distance between site1 and site2
 
                 # Check for hydrogen and catalyst framework elements based on the threshold_H
-                if element1 == "H" and element2 in CATALYST_FRAMEWORK_ELEMENTS and distance < threshold_H:
+                if element1 == "H" and element2 in CATALYST_FRAMEWORK_ELEMENTS and j not in oxygen_indexes and distance < threshold_H:
                     if i not in hydrogen_indexes:
                         hydrogen_indexes.append(i)
-                elif element2 == "H" and element1 in CATALYST_FRAMEWORK_ELEMENTS and distance < threshold_H:
+                elif element2 == "H" and element1 in CATALYST_FRAMEWORK_ELEMENTS and i not in oxygen_indexes and distance < threshold_H:
                     if j not in hydrogen_indexes:
                         hydrogen_indexes.append(j)
 
                 # Check for oxygen proximity based on the threshold_O
-                if element1 == "O" and element2 not in CATALYST_FRAMEWORK_ELEMENTS and distance < threshold_O:
-                    if i not in oxygen_indexes and i not in hydrogen_indexes and j not in hydrogen_indexes:
-                        oxygen_indexes.append(i)
-                elif element2 == "O" and element1 not in CATALYST_FRAMEWORK_ELEMENTS and distance < threshold_O:
-                    if j not in oxygen_indexes and i not in hydrogen_indexes and j not in hydrogen_indexes:
-                        oxygen_indexes.append(j)
+                if element1 == "O":
+                    if element2 not in CATALYST_FRAMEWORK_ELEMENTS and distance < threshold_O:
+                    # Check if O is also near a framework atom
+                        near_framework = any(
+                            sorted_structure.get_distance(i, k) < bond_threshold_framework and
+                            sorted_structure[k].species_string in CATALYST_FRAMEWORK_ELEMENTS
+                            for k in range(len(sorted_structure)) if k != i
+                        )
+                        if not near_framework and i not in hydrogen_indexes and i not in oxygen_indexes:
+                            oxygen_indexes.append(i)
+                elif element2 == "O":
+                    if element1 not in CATALYST_FRAMEWORK_ELEMENTS and distance < threshold_O:
+                        near_framework = any(
+                            sorted_structure.get_distance(j, k) < bond_threshold_framework and
+                            sorted_structure[k].species_string in CATALYST_FRAMEWORK_ELEMENTS
+                            for k in range(len(sorted_structure)) if k != j
+                        )
+                        if not near_framework and j not in hydrogen_indexes and j not in oxygen_indexes:
+                            oxygen_indexes.append(j)
+
 
         return sorted(oxygen_indexes), sorted(hydrogen_indexes)
 
