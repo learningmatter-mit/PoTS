@@ -92,7 +92,7 @@ class DimerUtils:
 
         return cartesian_coord
 
-    def get_molecular_oxygen_catalyst_hydrogens_indicies(sorted_structure, threshold_O=4, threshold_H=1.2, bond_threshold_framework=1.7):
+    def get_molecular_oxygen_catalyst_hydrogens_indicies(sorted_structure, threshold_O=4, threshold_H=1.2, bond_threshold_framework=1.8):
         """
         Check if any oxygen atom ("O") is close enough to an element different than "Si", "Al", or "O".
         Works with a pymatgen Structure object.
