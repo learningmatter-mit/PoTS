@@ -97,7 +97,7 @@ A combined [example](https://github.com/learningmatter-mit/PoTS/tree/main/exampl
 An [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Modes_for_Metals_test) for generating vibrational displacement modes in metal-containing systems. For systems with a broader range of atom types or different catalyst compositions, adjust the variables in the [chemistry_composition.py](https://github.com/learningmatter-mit/DIMER/blob/dimer_code/scripts/chemistry_composition.py) file to include the specific metal elements. Refer to the `example_run.sh` script in [examples/Modes_for_Metals](https://github.com/learningmatter-mit/DIMER/tree/dimer_code/examples/Modes_for_Metals_test) for a detailed demonstration of the procedure.
 
 ## Citing
-The publication describing the algorithm and the software is the following:
+The publication describing the algorithm and the software is the following: https://arxiv.org/abs/2504.08986 
 
 ### LINK
 
