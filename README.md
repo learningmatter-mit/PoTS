@@ -26,6 +26,7 @@ To install this repository, follow these steps:
 
     pip install pymatgen
 
+This software has been teste to work with numpy 1.26.4 and pymatgen 2023.3.10
 
 ## Usage
 
