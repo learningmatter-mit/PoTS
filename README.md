@@ -67,7 +67,7 @@ If no argument is provided, the script defaults to VASP format, with atomic type
 
 ## Examples
 
-This section provides demonstrations of script usage across various scenarios and file types.
+This section provides demonstrations of script usage across various scenarios and file types. The execution of the code should not take more than 5-10 seconds max per structure.
 
 #### POSCAR_test
 
