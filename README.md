@@ -20,7 +20,7 @@ The code can also generates mode input files for other computational chemistry s
 
 To install this repository, follow these steps:
 
-    git clone https://github.com/learningmatter-mit/DIMER
+    git clone https://github.com/learningmatter-mit/PoTS
 
     pip install numpy
 
