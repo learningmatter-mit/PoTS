@@ -71,35 +71,35 @@ This section provides demonstrations of script usage across various scenarios an
 
 #### POSCAR_test
 
-[This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/POSCAR_test) uses a crystal structure in `POSCAR` format. The script automatically sorts atomic types alphabetically in `POSCAR` and `POTCAR` files, calculates the vibrational displacements, and generates a `MODECAR` file for `VASP`.
+[This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/1_POSCAR_test) uses a crystal structure in `POSCAR` format. The script automatically sorts atomic types alphabetically in `POSCAR` and `POTCAR` files, calculates the vibrational displacements, and generates a `MODECAR` file for `VASP`.
 
 #### CIF_test
 
-[Analogous example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/CIF_test) to the `POSCAR_test` but using a `.cif` file for the crystal structure. 
+[Analogous example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/2_CIF_test) to the `POSCAR_test` but using a `.cif` file for the crystal structure. 
 
 #### Molecular_Oxygens_test
 
-In [this example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Molecular_Oxygens_test), the docked gas-phase molecule contains oxygen atoms, which the script autonomously identifies and distinguishes from those in the catalyst framework. Vibrational displacements are then generated specifically for the gas-phase molecule.
+In [this example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/3_Molecular_Oxygens_test), the docked gas-phase molecule contains oxygen atoms, which the script autonomously identifies and distinguishes from those in the catalyst framework. Vibrational displacements are then generated specifically for the gas-phase molecule.
 
 #### Acid_Hydrogens_test
 
-[This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Acid_Hydrogens_test) demonstrates the automatic detection and exclusion of hydrogen atoms from acidic catalyst sites during vibrational mode calculations, particularly for zeolite systems.
+[This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/4_Acid_Hydrogens_test) demonstrates the automatic detection and exclusion of hydrogen atoms from acidic catalyst sites during vibrational mode calculations, particularly for zeolite systems.
 
 #### Molecular_Oxygens_Acid_Hydrogens_test
 
-A combined [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Molecular_Oxygens_Acid_Hydrogens_test) featuring a gas-phase molecule with oxygen atoms and a catalyst with acidic hydrogen atoms. The script detects and processes both the docked gas-phase oxygen atoms and the acid-site hydrogen atoms during vibrational mode calculations.
-
-#### CP2K_ASE_GULP_LAMMPS_test
-
-[This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/CP2K_ASE_LAMMPS_GULP_test) demonstrates how to request output formats for DIMER TS searches in software other than `VASP`, such as `CP2K`, `ASE`, `GULP`, and `LAMMPS`. Use the appropriate arguments (e.g., `--cp2k`, `--gulp`, `--ase`, `--lammps`) to generate the required input files for these software packages.
+A combined [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/5_Molecular_Oxygens_Acid_Hydrogens_test) featuring a gas-phase molecule with oxygen atoms and a catalyst with acidic hydrogen atoms. The script detects and processes both the docked gas-phase oxygen atoms and the acid-site hydrogen atoms during vibrational mode calculations.
 
 #### Modes_for_Metals
 
-An [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Modes_for_Metals_test) for generating vibrational displacement modes in metal-containing systems. For systems with a broader range of atom types or different catalyst compositions, adjust the variables in the [chemistry_composition.py](https://github.com/learningmatter-mit/PoTS/tree/main/scripts/chemistry_composition.py) file to include the specific metal elements. Refer to the `example_run.sh` script in [examples/Modes_for_Metals](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Modes_for_Metals_test) for a detailed demonstration of the procedure.
+An [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/6_Modes_for_Metals_test) for generating vibrational displacement modes in metal-containing systems. For systems with a broader range of atom types or different catalyst compositions, adjust the variables in the [chemistry_composition.py](https://github.com/learningmatter-mit/PoTS/tree/main/scripts/chemistry_composition.py) file to include the specific metal elements. Refer to the `example_run.sh` script in [examples/Modes_for_Metals](https://github.com/learningmatter-mit/PoTS/tree/main/examples/6_Modes_for_Metals_test) for a detailed demonstration of the procedure.
+
+#### CP2K_ASE_GULP_LAMMPS_test
+
+[This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/7_CP2K_ASE_LAMMPS_GULP_test) demonstrates how to request output formats for DIMER TS searches in software other than `VASP`, such as `CP2K`, `ASE`, `GULP`, and `LAMMPS`. Use the appropriate arguments (e.g., `--cp2k`, `--gulp`, `--ase`, `--lammps`) to generate the required input files for these software packages.
+
+
 
 ## Citing
 The publication describing the algorithm and the software is the following: https://arxiv.org/abs/2504.08986 
-
-### LINK
 
 If you use this software, please cite the paper above.
