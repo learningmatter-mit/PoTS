@@ -38,7 +38,7 @@ Make sure the following input files are available:
 
 - Gas molecule coordinates in an `.xyz` file.
 
-- A `vibdisps` file containing negative-frequency TS gas-phase vibrational displacements.
+- A `vibdisps` file containing imaginary-frequency TS vibrational displacements.
 
 - **Optional (but recommended):** A `POTCAR` file for `VASP` runs, which will be sorted alphabetically alongside the `POSCAR`.
 
@@ -61,7 +61,7 @@ Then execute:
 
 To generate initial guess modes for a DIMER TS search in formats other than `VASP`, add the appropriate arguments to the script. The script will write the required files to the folder, allowing you to request one or multiple formats simultaneously.
 
-    python run.py --cp2k --gulp --ase --lammps
+    python ../../scripts/run.py --cp2k --gulp --ase --lammps
     
 If no argument is provided, the script defaults to VASP format, with atomic types in `POSCAR` and `POTCAR` files sorted alphabetically.
 
@@ -95,7 +95,7 @@ A combined [example](https://github.com/learningmatter-mit/PoTS/tree/main/exampl
 
 #### Modes_for_Metals
 
-An [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Modes_for_Metals_test) for generating vibrational displacement modes in metal-containing systems. For systems with a broader range of atom types or different catalyst compositions, adjust the variables in the [chemistry_composition.py](https://github.com/learningmatter-mit/DIMER/blob/dimer_code/scripts/chemistry_composition.py) file to include the specific metal elements. Refer to the `example_run.sh` script in [examples/Modes_for_Metals](https://github.com/learningmatter-mit/DIMER/tree/dimer_code/examples/Modes_for_Metals_test) for a detailed demonstration of the procedure.
+An [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Modes_for_Metals_test) for generating vibrational displacement modes in metal-containing systems. For systems with a broader range of atom types or different catalyst compositions, adjust the variables in the [chemistry_composition.py](https://github.com/learningmatter-mit/PoTS/tree/main/scripts/chemistry_composition.py) file to include the specific metal elements. Refer to the `example_run.sh` script in [examples/Modes_for_Metals](https://github.com/learningmatter-mit/PoTS/tree/main/examples/Modes_for_Metals_test) for a detailed demonstration of the procedure.
 
 ## Citing
 The publication describing the algorithm and the software is the following: https://arxiv.org/abs/2504.08986 
