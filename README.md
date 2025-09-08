@@ -14,7 +14,7 @@ The code is tailored for reactions in zeolites, primarily hydrocarbon conversion
 
 Verbose output is enabled by default to aid users in understanding execution and debugging.
 
-The code can also generates mode input files for other computational chemistry software, such as `CP2K`, `GULP`, `ASE`, and `LAMMPS` if indicated to do so, see [Optional Command-line Arguments](#optional-arguments).
+The code can also generate mode input files for other computational chemistry software, such as `CP2K`, `GULP`, `ASE`, and `LAMMPS` if indicated to do so, see [Optional Command-line Arguments](#optional-arguments).
 
 ## Installation
 
@@ -26,7 +26,7 @@ To install this repository, follow these steps:
 
     pip install pymatgen
 
-This software has been teste to work with numpy 1.26.4 and pymatgen 2023.3.10
+This software has been tested to work with numpy 1.26.4 and pymatgen 2023.3.10
 
 ## Usage
 
@@ -67,7 +67,7 @@ If no argument is provided, the script defaults to VASP format, with atomic type
 
 ## Examples
 
-This section provides demonstrations of script usage across various scenarios and file types. The execution of the code should not take more than 5-10 seconds max per structure.
+This section provides demonstrations of script usage across various scenarios and file types. The execution of the code should not take more than 5-10 seconds per structure.
 
 #### POSCAR_test
 
