@@ -42,6 +42,8 @@ Make sure the following input files are available:
 
 - **Optional (but recommended):** A `POTCAR` file for `VASP` runs, which will be sorted alphabetically alongside the `POSCAR`.
 
+Note: `POTCAR` files are not distributed with this repository due to `VASP` licensing restrictions. Users should generate or provide their own `POTCAR` when preparing inputs for `VASP` calculations. The `PoTS` code automatically triggers the atom-sorting check against the `POSCAR` file as soon as a file named `POTCAR` is present in the working directory.
+
 Then execute:
 
     python ../../scripts/run.py
