@@ -42,6 +42,8 @@ Make sure the following input files are available:
 
 - **Optional (but recommended):** A `POTCAR` file for `VASP` runs, which will be sorted alphabetically alongside the `POSCAR`.
 
+For convenience, a template INCAR is provided in every example folder. This file can be used as a starting point for DFT calculations after mode generation and adapted as needed for specific systems.
+
 Note: `POTCAR` files are not distributed with this repository due to `VASP` licensing restrictions. Users should generate or provide their own `POTCAR` when preparing inputs for `VASP` calculations. The `PoTS` code automatically triggers the atom-sorting check against the `POSCAR` file as soon as a file named `POTCAR` is present in the working directory.
 
 Then execute:
