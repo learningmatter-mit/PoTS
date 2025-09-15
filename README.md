@@ -102,6 +102,19 @@ An [example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/6_Mod
 [This example](https://github.com/learningmatter-mit/PoTS/tree/main/examples/7_CP2K_ASE_LAMMPS_GULP_test) demonstrates how to request output formats for DIMER TS searches in software other than `VASP`, such as `CP2K`, `ASE`, `GULP`, and `LAMMPS`. Use the appropriate arguments (e.g., `--cp2k`, `--gulp`, `--ase`, `--lammps`) to generate the required input files for these software packages.
 
 
+## Pipeline Utilities (utils/)
+
+The [utils/](https://github.com/learningmatter-mit/PoTS/tree/main/utils) directory contains the main PoTS pipeline driver and all auxiliary scripts required to run a full transition-state search workflow starting from molecular SMILES/SMARTS. This pipeline automates tasks from conformer generation to semiempirical and DFT calculations, docking, and VASP periodic inputs.
+
+**Running the Pipeline**
+
+From the utils/ directory:
+
+```
+cd /path/to/PoTS/utils
+python PoTS.py --smiles-file smiles.txt --smarts-file smarts.txt
+```
+A complete step by step guide can be found on the [utils/README.md](https://github.com/learningmatter-mit/PoTS/blob/main/utils/README.md) file.
 
 ## Citing
 The publication describing the algorithm and the software is the following: https://arxiv.org/abs/2504.08986 
