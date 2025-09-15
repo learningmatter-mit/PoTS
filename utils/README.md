@@ -5,6 +5,25 @@ PoTS (Python for Transition States) is a lightweight pipeline that automates the
 Note: this pipeline driver (`PoTS.py`) runs from the `utils/` directory and works exclusively with the content in `utils/`.
 
 ---
+## Software requirements
+
+PoTS relies on Python and several external chemistry packages for different workflow steps. These must be installed separately:
+
+- **RDKit** — required for conformer generation (`utils/conformer/conformer_generator.py`). Supports MMFF or UFF force fields.
+
+- **Open Babel** (optional) — fallback for RMS alignment if clustering fails.
+
+- **xTB** — semiempirical optimization (`xtb_job.sh`).
+
+- **ORCA** — gas-phase DFT optimizations, scans, and TS calculations.
+
+- [**VOID**](https://github.com/learningmatter-mit/VOID/tree/master?tab=readme-ov-file#void-voronoi-organic-inorganic-docker) — docking of molecules inside periodic frameworks accounting for the [cation-acid site](https://github.com/learningmatter-mit/VOID/tree/master?tab=readme-ov-file#docking-for-reactivity) distances (`utils/docking/`).
+
+- **VASP** — periodic DFT calculations (geometry optimization and dimer TS search).
+
+- **Slurm or local job submission system** — PoTS prepares job folders but does not execute DFT or xTB jobs.
+
+
 
 ## Quick overview
 
@@ -25,10 +44,8 @@ python utils/PoTS.py --smiles-file utils/smiles.txt --smarts-file utils/smarts.t
 
 - **smarts.txt** — mapped SMARTS string (`reactant>>product`) used to detect the reactive indeces.
 
-Note: PoTS prepares job folders and input files. ORCA, VASP and XTB jobs are usually submitted to HPC systems (Slurm) manually or via your local submission scripts.
-
 Important: PoTS.py automatically creates all the required folders and input files starting only from a smiles.txt and smarts.txt.
-The utils/ folder in this repository already contains solved calculations and optimised files so new users can test the workflow from start to end without running heavy calculations.
+The utils/ folder in this repository already contains solved calculations and optimised files so new users can test the workflow from start to end without running heavy calculations. The adaptation of this pipeline to the user work environment is out of the reach of this tutorial folder.
 
 ---
 
