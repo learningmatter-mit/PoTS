@@ -1,0 +1,42 @@
+! Start parameters :
+ISTART = 0   # start from scratch
+LWAVE =  .FALSE.   # do not write WAVECAR file
+LCHARG = .FALSE.   # do not write CHGCAR file
+LVTOT =  .FALSE.   # do not write LOCPOT file
+LVHAR = .FALSE.
+
+! Electronic relaxation :
+EDIFF  = 1E-6
+ALGO   = FALSE
+NELM   =  60 
+NELMIN = 4
+PREC   = High
+LREAL  = Auto
+ENCUT  = 600
+IVDW   = 12  # DFT-D3 with Becke-Johnson damping
+ISMEAR = 0
+SIGMA = 0.05
+
+! Ionic relaxation :
+NSW = 1000
+IOPT = 2 # Necessary for dimer runs
+IBRION = 3 # Compulsory for dimer runs
+POTIM = 0 # Compulsory for dimer runs
+ISIF = 2  # Fixed Cell
+ISYM =  2 
+SYMPREC = 1e-05
+EDIFFG = -0.01
+ISPIN = 1
+
+! Parallelization
+LPLANE = .TRUE.
+LSCAAWARE = .TRUE.
+NCORE = 4
+KPAR = 1
+
+! Dimer keywords
+ICHAIN = 2  # Use the dimer method 
+DdR =  0.005  # The Dimer Separation 
+DRotMax =  4 #rotations per translation
+DFNMin =  0.01 
+DFNMax = 1.0 

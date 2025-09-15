@@ -1,0 +1,19 @@
+{
+    "input": [
+        "zeolite.cif",
+        "molecule.xyz"
+    ],
+    "output": "docked_pose",
+    "subdock": false,
+    "docker": "mcsuccess",
+    "sampler": "random",
+    "fitness": "min_catan_distance",
+    "attempts": 200000,
+    "temperature": 0.1,
+    "num_samples": 10,
+    "threshold": 1.5,
+    "structure": "complex",
+    "threshold_catan": 3.5,
+    "cation_indexes": null,
+    "acid_sites": null
+}

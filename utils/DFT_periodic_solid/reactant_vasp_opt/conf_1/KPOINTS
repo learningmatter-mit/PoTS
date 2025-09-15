@@ -1,0 +1,34 @@
+! Start parameters :
+ISTART = 0   # start from scratch
+LWAVE =  .FALSE.   # do not write WAVECAR file
+LCHARG = .FALSE.   # do not write CHGCAR file
+LVTOT =  .FALSE.   # do not write LOCPOT file
+LVHAR = .FALSE.
+
+! Electronic relaxation :
+EDIFF  = 1E-6
+ALGO   = Fast
+NELM   =  60
+NELMIN = 4
+PREC   = High
+LREAL  = Auto
+ENCUT  = 600
+IVDW   = 12  # DFT-D3 with Becke-Johnson damping
+ISMEAR = 0
+SIGMA = 0.05
+
+! Ionic relaxation :
+NSW = 1500
+IBRION = 2
+ISIF = 2
+ISYM =  2
+SYMPREC = 1e-05
+EDIFFG = -0.01
+ISPIN = 1
+
+! Parallelization
+LPLANE = .TRUE.
+LSCAAWARE = .TRUE.
+NCORE = 4
+KPAR = 1
+

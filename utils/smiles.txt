@@ -1,0 +1,2 @@
+reactant: CCC1=C[CH+]C=CC1C(C)c1ccccc1
+product: CCC1-C=C[CH+]-C=C1C(C)c1ccccc1

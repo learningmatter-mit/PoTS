@@ -1,0 +1,6 @@
+# XTB input file for optimization
+$opt
+method = gfn2
+charge = 0
+uhf = 0
+end
