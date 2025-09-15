@@ -2,7 +2,7 @@
 
 This repository provides scripts to generate vibrational displacement modes for DIMER transition state (TS) searches in crystalline structures.
 
-This code has been tested after docking pose generation with [VOID](https://github.com/learningmatter-mit/VOID), but it should also work seamlessly with other pose generation software. 
+This code has been tested after docking pose generation with [VOID](https://github.com/learningmatter-mit/VOID), specifically with the [cation-anion Monte Carlo algorithm](https://github.com/learningmatter-mit/VOID/tree/master?tab=readme-ov-file#docking-for-reactivity) developed for this work.
 
 ## Overview
 
